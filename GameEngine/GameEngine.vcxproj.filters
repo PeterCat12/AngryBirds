@@ -14,9 +14,6 @@
     <ClCompile Include="Engine.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
-    <ClCompile Include="AzulCore.cpp">
-      <Filter>Engine</Filter>
-    </ClCompile>
     <ClCompile Include="Man.cpp">
       <Filter>Manager</Filter>
     </ClCompile>
@@ -209,6 +206,7 @@
     <ClCompile Include="PhysicsManager.cpp">
       <Filter>Manager</Filter>
     </ClCompile>
+    <ClCompile Include="AzulCore.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="..\Math\lib\MathDebug.lib">

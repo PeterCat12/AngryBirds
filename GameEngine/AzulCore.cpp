@@ -58,7 +58,7 @@ ScreenLine *pLine2;
 b2Vec2 normalGrav(0.0f, -10.0f);
 b2Vec2 lowGrav(0.0f, -5.0f);
 
-
+b2World *pWorld;
 bool setGravity; 
 bool reset;
 bool themeMusic;
@@ -120,10 +120,7 @@ void AzulCore::Initialize()
 	themeMusic = false;
 }
 
-b2World *pWorld;
-b2Body *pBody;
-b2Body *pBody2;
-b2Body *pBody3;
+
 
 enum type{ Static, Dynamic};
 
@@ -156,8 +153,8 @@ void AzulCore::LoadContent()
 
 	pWorld->SetGravity(lowGrav);
 
-	LL->loadLevel_1(pWorld);
-	//LL->loadLevel_2(pWorld);
+	//LL->loadLevel_1(pWorld);
+	LL->loadLevel_2(pWorld);
 	victorySound = 0;
 	RandomCommands::getInstance()->victory = false;
 
@@ -192,7 +189,7 @@ void AzulCore::Update()
 
 	float time2 = totalWatch.timeInSeconds() - time;
 
-	if(setGravity == false && time2 > .25f)
+	if(setGravity == false && time2 > 2.0f)
 	{
 		pWorld->SetGravity(normalGrav);
 		setGravity = true;
@@ -214,7 +211,7 @@ void AzulCore::Update()
 	PhysicsMan::UpdatePhysics(pWorld);
 
 	// update game
-	if( time2 > 0.25f)
+	if( time2 > 2.0f)
 	{
 		GameObjectManager::UpdateGameObjects();
 		if(Audio::Victory())
