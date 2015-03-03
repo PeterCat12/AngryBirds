@@ -153,8 +153,8 @@ void AzulCore::LoadContent()
 
 	pWorld->SetGravity(lowGrav);
 
-	//LL->loadLevel_1(pWorld);
-	LL->loadLevel_2(pWorld);
+	LL->loadLevel_1(pWorld);
+	//LL->loadLevel_2(pWorld);
 	victorySound = 0;
 	RandomCommands::getInstance()->victory = false;
 
